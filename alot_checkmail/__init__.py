@@ -1,4 +1,4 @@
-__productname__ = "alot_checkmail"
+__productname__ = "alot-plugin-checkmail"
 __version__ = "0.0.10"
 __copyright__ = "Copyright (c) 2021 Torgny Bjers"
 __author__ = "Torgny Bjers"
