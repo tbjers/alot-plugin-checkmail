@@ -20,3 +20,13 @@ Insert the following stanza in your `~/.config/alot/config` file:
 [checkmail]
   command = '/path/to/your/binary/or/script -abc --with --any --parameters'
 ```
+
+## Usage
+
+The easiest way to include your plugin is to import it directly in the top of `hooks.py` like so:
+
+```python
+from alot_checkmail import checkmail
+```
+
+You can then invoke the command in alot by running `:checkmail`.
