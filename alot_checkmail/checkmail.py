@@ -17,7 +17,7 @@ class CheckMailFailed(RuntimeError):
 
 @registerCommand(MODE, 'checkmail')
 class CheckMailCommand(Command):
-    def __init__(self, thread=None, kwargs**):
+    def __init__(self, thread=None, **kwargs):
         try:
             if 'checkmail' not in settings._config:
                 raise Exception('Missing configuration [checkmail]')
@@ -25,6 +25,7 @@ class CheckMailCommand(Command):
         except Exception as e:
             if ui:
                 ui.notify('Missing configuration [checkmail]', priority='error')
+        Command.__init__(self, **kwargs)
 
     async def apply(self, ui):
         try:
