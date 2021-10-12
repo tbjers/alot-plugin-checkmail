@@ -2,6 +2,8 @@
 
 A plugin that checks mail asynchronously, giving you feedback through the process via notifications.
 
+This plugin was mostly written to accomodate running [mbsync](https://isync.sourceforge.io/mbsync.html) from inside `alot` without being intrusive. This can be useful if you do not wish to wait for your systemd timer to execute your mail sync.
+
 ## Installation
 
 Run the following in the environment that alot's `hooks.py` uses:
