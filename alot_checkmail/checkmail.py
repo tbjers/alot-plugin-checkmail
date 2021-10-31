@@ -37,6 +37,9 @@ class CheckMailCommand(Command):
             out, err, code = await call_cmd_async(cmdlist)
             if ui:
                 ui.clear_notify([widget])
+                if code == 0 and out.strip():
+                    message = ''.join([c for c in out.replace('\n', ' ') if c not in ['\t', '\r', '\n']])
+                    ui.notify(message, priority='normal', timeout=3, block=False)
             if code != 0:
                 if ui:
                     ui.notify('Failed to check mail.', priority='error')
